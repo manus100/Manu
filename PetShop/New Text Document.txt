@@ -1,0 +1,48 @@
+/*
+async function showProducts(productsPromise) {
+
+    var products = await productsPromise;
+    var generatedHTML = '';
+    var productsIDs = Object.keys(products);
+    productsIDs.forEach(productID => {
+        var product = products[productID];
+        generatedHTML += getGeneratedHTMLForProduct(productID, product);
+    });
+    document.getElementById('main').innerHTML = generatedHTML;
+}
+
+async function getProduse() {
+    var productsResponse = await fetch(produseUrlList)
+    var products = await productsResponse.json();
+    return products;
+}
+
+
+async function showProducts(productsPromise) {
+
+    var products = await productsPromise;
+    var generatedHTML = '';
+    var productsIDs = Object.keys(products);
+    productsIDs.forEach(productID => {
+        var product = products[productID];
+        generatedHTML += getGeneratedHTMLForProduct(productID, product);
+    });
+    document.getElementById('categories').innerHTML = generatedHTML;
+}
+
+function getGeneratedHTMLForProduct(productID, product) {
+    var generatedHTML = `
+        <div id = main>
+            <img class = "categoryImage" src = ${product.Image} />
+            <div class = "categoryName">${product.Name}</div>
+            <div class = "categoryPrice">$ ${product.Price}</div>
+            <button id = "detalii" onclick = "seeMore('${productID}')">Detalii</button>
+        </div>
+    `;
+    return generatedHTML;
+} */
+
+
+
+
+

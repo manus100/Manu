@@ -1,0 +1,244 @@
+*{
+    box-sizing:border-box;
+}
+html, body{
+    margin:0;
+    padding:0;
+}
+
+#website{
+    max-width: 1255px; 
+    margin: 0 auto;
+    background-color:#e4fde4;
+    border: 1px dotted #8bc34a;
+}
+
+#header{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border:1px dotted #8bc34a;  
+}
+
+.headerElements.title{
+    font-family: 'MyriadPro-Light';
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    margin: auto;
+    color:green;
+    text-shadow: 0 0 1px #91c445;
+    flex:3;
+    min-width: 260px;
+    text-align: center;
+ /*   vertical-align: middle;*/
+}
+
+.headerElements.right{
+  /*  vertical-align: middle;
+    text-align: center;  */
+    margin: auto;
+    margin-right: 5px;
+    /* flex: 1; */
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+a:visited {
+    color: green;
+    text-shadow: 0 0 1px #91c445;
+  }
+
+.btnAdmin{
+    border-radius: 10px;
+    font-size:16px;
+    height:40px;
+}
+
+#chartBtn{
+   border:0;
+   background-color: #f5b21ce0;   /* #46b0fbe0; */
+   border-radius: 10px;
+}
+
+@media (min-width: 992px) {
+    #chartBtn{
+        width:180px;
+    }
+}
+
+
+#adminBtn{
+   border:1px solid lightgray;
+   background-color: white;
+   border-radius: 10px;
+   font-size:16px;
+   overflow: hidden;
+}
+
+
+#cartlink{
+    color: #ffffff;
+}
+
+#adminLink{
+    color:black;
+    padding-right: 5px;
+}
+
+#imgAdmin{
+    width:35px;
+    vertical-align:middle;
+}
+
+.imgHeaderNew {
+    display: inline-block;
+    width: 120px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../img/whiteCat.jpg")
+}
+
+#imgHeader{
+    width:120px;
+    height: 100%;
+}
+
+#imgCart{
+    width:40px;
+    vertical-align: middle;
+}
+
+#imgLoader {
+    display: inline-block;
+    width:15vw;
+    margin-right: 10%; 
+ /*   position: fixed;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);  */
+}
+
+#main{
+    display: flex; 
+    flex-wrap: wrap; 
+    width: 100%; 
+    margin-bottom:15px
+}
+
+#details{
+    margin-top:5px;
+}
+
+.productDescription{
+    height: 98%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    margin:10px;
+   
+}
+
+.productImage{
+    width:80%;
+}
+
+.productName{
+    font: 18px 'MyriadPro-Light';
+    font-weight: normal;
+    color:black;
+    line-height: 18px;
+    height: 2em;
+}
+
+.productPrice{
+    color: #91c445;
+    font: 24px 'MyriadPro-Light';
+    text-shadow: 0 0 1px #91c445;
+    margin-bottom:10px;
+}
+
+.btnDetails{
+    background-color:#f5b21ce0;
+    border-radius: 5px;
+    width: 120px;
+    border:0px;
+    font: 20px 'MyriadPro-Light';
+    margin-bottom:5px;
+}
+
+#btnDetails:hover{
+    background-color: #91c445;
+}
+
+/* -------------------------------------- details page ----------------------------------------------- */
+#nameBrand{
+    display: block;
+    width:100%;
+    margin: 20px;
+    font-family: 'MyriadPro-Regular' ;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+#detailsProductImg{
+    width:350px;
+    border-radius: 10px;
+    margin: 10px;
+
+}
+
+#detailsProductDetail{
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    margin:10px;
+}
+
+#detailsProductShop{
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    margin-left:10px;
+}
+
+#footer{
+    clear: both;
+    height: 5%;
+    border:1px dotted #8bc34a;
+    text-align:center;
+    margin-top:10px;
+    padding: 10px;
+    font-family: 'MyriadPro-Light'; 
+}
+
+#footer a{
+    color: #474747;
+}
+
+#footerTitle{
+    margin: 5px;
+    font-size: 15px;
+    color: #474747;
+    font-weight: bold;
+    padding: 0 0 16px 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+.hidden{
+    display: none;
+}

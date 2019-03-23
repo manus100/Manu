@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Online</title>
+    <meta name="description" content="PetShop Online">
+    <link rel="stylesheet" type="text/css" media="screen" href="css\style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css\grid.css" />
+    <script type="text/javascript" src="js\script.js"></script>
+
+</head>
+
+<body onload="showDetails(getDetails(getProductIDFromUrl()));">
+    <div id="website">
+        <div id="header">
+            <div class='headerElements'><img src="img\whiteCat.jpg" alt="Cat image" id="imgHeader"></div>
+            <div class='headerElements title'><a href="index.html" onclick='showProduse(getProduse());'>PetShop Online</a></div>
+            <div class='headerElements right'>
+                    <button id="chartBtn" class='btnHeader'><img src="img\whiteShoppingCart.jpg" id="imgCart">
+                    <a href="cart.html" id="cartlink">&nbsp;COS <span id="itemsCounter">(0)</span></a>
+                    </button>
+                   
+            </div>
+            <br style="clear: left;" />
+        </div>
+       
+        <div id="spinner">
+              <img id="imgLoader" src="img/pageLoader.gif" class='imgLoader'/> 
+        </div>
+        
+        
+        <div id="main">
+            <div id = "adToCartMessage" style = "display: none;">${details.Name} a fost adaugat in cos!</div>
+            <div id="nameBrand"></div>
+            <br>
+            <div class = 'col-xs-12 col-sm-4 col-md-4 col-lg-4'>
+            <!--<div id='productDetails style='display:flex;     flex-direction: row; flex-wrap: nowrap;'>  -->
+                <div id = "detailsProductImage"  ><img id ="detailsProductImg" src=''></div>   <!--style='width:33%; float:left;'  -->
+                <div id = "detailsProductDetail"></div> 
+                <div id = "detailsProductShop">   
+                    <div id='detailsProductPrice'></div>
+                    <div id="disponibilitate">Disponibilitate</div>
+                    <div id='detailsProductQty'></div>
+                    <label>Cantitate<input type="number"></label>
+                    <br>
+                    <button id = "addToCart">Adauga in cos</button>
+                </div>
+                
+            </div>
+                
+        </div>
+
+            <div id="footer">
+                    <div id='footerTitle'>Contactează-ne</div>
+                    <a href="">Str. Covasna nr. 45, sector 5, București, România</a><br>
+                    <a href=''>0372 905 900</a><br>
+                    <a href=''>0727 278 278</a><br>
+                    <a href="">contact@petshop.ro</a><br>
+                </div>
+            </div>
+    </div>
+
+</body>
+
+</html>
