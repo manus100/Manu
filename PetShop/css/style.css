@@ -11,6 +11,7 @@ html, body{
     margin: 0 auto;
     background-color:#e4fde4;
     border: 1px dotted #8bc34a;
+    font-family: MyriadPro-Regular, Arial, Helvetica, sans-serif;
 }
 
 #header{
@@ -185,32 +186,136 @@ a:visited {
 #nameBrand{
     display: block;
     width:100%;
-    margin: 20px;
+    margin: 30px;
+    margin-bottom: 0px;
     font-family: 'MyriadPro-Regular' ;
     font-size: 22px;
     font-weight: normal;
 }
 
-#detailsProductImg{
-    width:350px;
-    border-radius: 10px;
-    margin: 10px;
+#productDetails{
+    display:flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;  
+    margin:20px; 
+    min-width:600px;
+    height: 300px;;
+}
 
+#detailsProductImage{
+    border-radius: 10px;
+    margin-right:5px;
+    flex:1; 
+    background-color: white;
+
+}
+
+#detailsProductImg{
+    border-radius: 10px;
+    width:280px;
+    height: 300px;
+   
 }
 
 #detailsProductDetail{
-    width: 350px;
+    margin-right:10px;
+    padding:15px 5px 0px 15px;
+    text-align: left;
     background: white;
     border-radius: 10px;
-    margin:10px;
+   
+   flex:2; 
 }
 
 #detailsProductShop{
-    width: 350px;
+    padding: 10px;
     background: white;
     border-radius: 10px;
-    margin-left:10px;
+    font-size:20px;
+    text-align: center;
+    flex:1; 
 }
+
+#txtCantitate{
+    width:50px;
+    margin-left: 5px;
+}
+
+
+#disponibil{
+    margin-left: 10px;
+}
+
+
+#carusel{
+    display: block;
+    margin:auto;
+    max-width: 300px;
+}
+
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 300px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
+  
+.invalid{
+    border-color:red;
+}
+
+#adToCartMessage{
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    color:#101010f5;
+    background-color:#fbe1a5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+}
+
 
 #footer{
     clear: both;

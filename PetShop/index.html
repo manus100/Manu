@@ -12,7 +12,7 @@
 
 </head>
 
-<body onload="getProducts();">
+<body onload="getProducts();">  <!--localStorage.clear();-->
     <div id="website">
         <div id="header">
            <div ><img src="img\whiteCat.jpg" alt="Cat image" id="imgHeader"></div>
@@ -20,7 +20,7 @@
             <div class='headerElements title'><a href="index.html" onclick='getProducts();'>PetShop Online</a></div>
             <div class='headerElements right'>
                     <button id="chartBtn" class='btnAdmin'><img src="img\whiteShoppingCart.jpg" id="imgCart">
-                    <a href="cart.html" id="cartlink">COS <span id="itemsCounter">(0)</span></a>
+                    <a href="cart.html" id="cartlink">COS <span id="cartItems">(0)</span></a>
                     </button>
                     <button id="adminBtn" class='btnAdmin'><img src="img\admin.jpg" id="imgAdmin"><a  href="admin.html" id='adminLink'>&nbsp;ADMIN</a></button>
             </div>
