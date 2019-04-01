@@ -337,6 +337,8 @@ img {vertical-align: middle;}
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     font-size: 30px;
+    position:fixed;
+    max-width: 1255px; 
 }
 
 @media only screen and (max-width: 600px) {
