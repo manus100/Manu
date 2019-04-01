@@ -8,30 +8,34 @@
     <meta name="description" content="PetShop Online">
     <link rel="stylesheet" type="text/css" media="screen" href="css\style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css\grid.css" />
-    <script type="text/javascript" src="js\script.js"></script>
+    <script type="text/javascript" src="js\common.js"></script>
 
 </head>
 
-<body onload="getProducts();">  <!--localStorage.clear();-->
+<body onload="getProducts();">
+    <!--localStorage.clear();-->
     <div id="website">
         <div id="header">
-           <div ><img src="img\whiteCat.jpg" alt="Cat image" id="imgHeader"></div>
+            <div><img src="img\whiteCat.jpg" alt="Cat image" id="imgHeader"></div>
             <!-- <div class='imgHeaderNew'></div>-->
-            <div class='headerElements title'><a href="index.html" onclick='getProducts();'>PetShop Online</a></div>
-            <div class='headerElements right'>
-                    <button id="chartBtn" class='btnAdmin'><img src="img\whiteShoppingCart.jpg" id="imgCart">
-                    <a href="cart.html" id="cartlink">COS <span id="cartItems">(0)</span></a>
+            <div class='headerElements title'><a href="index.html"'>PetShop Online</a></div>
+            <div class=' headerElements right'>
+                    <button class="chartBtn" onclick="location.href = 'cart.html'"><img
+                            src="img\whiteShoppingCart.jpg" id="imgCart">
+                        <a href="cart.html" id="cartlink">COS <span id="cartItems">(0)</span></a>
                     </button>
-                    <button id="adminBtn" class='btnAdmin'><img src="img\admin.jpg" id="imgAdmin"><a  href="admin.html" id='adminLink'>&nbsp;ADMIN</a></button>
+                    <button id="adminBtn" class='btnAdmin'><img src="img\admin.jpg" id="imgAdmin"><a href="admin.html"
+                            id='adminLink'>&nbsp;ADMIN</a></button>
             </div>
             <br style="clear: left;" />
         </div>
-       
-        <div id="spinner" class = 'col-xs-12 col-md-12 col-lg-12' style=" text-align:center">
-            <img id="imgLoader" src="img/rotatingRingLoader.gif"/>
+
+        <div id="spinner" class='col-xs-12 col-md-12 col-lg-12'>
+            <!--style=" text-align:center"-->
+            <img id="imgLoader" src="img/rotatingRingLoader.gif" />
         </div>
-        
-        
+
+
         <div id="main">
         </div>
 
