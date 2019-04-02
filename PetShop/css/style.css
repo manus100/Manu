@@ -478,7 +478,7 @@ width:130px;
     .headerElements.title{
         font-size: 30px;
         flex:2;
-        min-width: 213px;
+        min-width: 180px;
     }
   }
 
