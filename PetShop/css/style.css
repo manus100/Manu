@@ -209,6 +209,12 @@ a:visited {
     #productDetails {
       flex-direction: column;
     }
+    .chartBtn{
+        width: 120px;
+    }
+    .headerElements.title{
+        font-size: 35px;
+    }
   }
 
 /* Medium screens */
