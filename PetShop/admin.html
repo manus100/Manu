@@ -14,7 +14,7 @@
 
 <body onload="getProductsList(); getCartNbOfItems('');">
     <div id="website">
-        <div id="header">
+        <div id="header" class="sticky">
             <div class='headerElements'><img src="img\whiteCat.jpg" alt="Cat image" id="imgHeader"></div>
             <div class='headerElements title'><a href="index.html">PetShop Online</a></div>
             <div class='headerElements right'>
@@ -33,12 +33,11 @@
 
 
         <div id="main">
-            <div class='pageTitle cartTitle'>
+            <div class='pageTitle cartTitle'  style='position: relative;'>
                 <div id='pageTitle' style='float:left;'>Gestionare produse</div>
                 <button id='btnAdd' class='chartBtn' onclick="showAddForm();">+ Adauga produs</button>
-
             </div>
-
+           
             <div id="userMessage" class='pageTitle userMessage' style="clear:both; display: none;">Mesaj</div>
 
 
@@ -48,13 +47,20 @@
                         <label for='img' class="labels">Image:</label>
                         <input type="text" id="img" name="img" title='Imagine produs' class="inputs"
                             oninvalid="this.setCustomValidity('Introduceti url-ul pentru imaginea produsului!');"
-                            oninput="setCustomValidity('');" required tabindex="1" /><br /><br />
+                            oninput="setCustomValidity('');" required tabindex="1" />
+<!--
+                            <input type="file" id="file-upload" style='display: none' />
+                            <label for="file-upload">...</label>
+                            <div id="file-upload-filename"></div>
+
+-->
+                        <br /><br />
                         <label for='name' class="labels">Nume:</label>
                         <input type="text" name="name" id="name" title='Denumire produs'
                             oninvalid="this.setCustomValidity('Introduceti denumirea produsului!');"
                             oninput="setCustomValidity('');" class="inputs" tabindex="2" required /> <br /><br />
                         <label for='pret' class="labels">Pret:</label>
-                        <input type="number" step=".01" name="pret" id="pret" title='Pret produs' class="inputs minwid"
+                        <input type="number"  name="pret" id="pret" step=".01" title='Pret produs' class="inputs minwid"
                             oninvalid="this.setCustomValidity('Introduceti pretul produsului!');"
                             oninput="setCustomValidity('');" required min=0 tabindex="3">
                         <br /><br />
@@ -116,6 +122,13 @@
         </div>
     </div>
 
+    <!--<script>
+        var input = document.getElementById( 'file-upload' );
+        var infoArea = document.getElementById('img');
+
+        input.addEventListener( 'change', showFileName );
+
+    </script>  -->
 </body>
 
 </html>

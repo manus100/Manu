@@ -36,14 +36,15 @@ function saveToCart(productID) {
                     alert('Cantitatea din cos plus cea introdusa depaseste stocul produsului! \n\n  Va rugam sa introduceti o cantitate mai mica!')
                     return;
                 } else {
-
+                    //salvez si un camp stare care imi va spune daca inregistrarea a fost modificata de admin
                     var newCartList = {
                         'id': productID,
                         'img': productDetails.Image,
                         'name': productDetails.Name,
                         'price': productDetails.Price,
                         'qty': selectedQty + parseInt(cartList[index].qty),
-                        'stockQty': productDetails.Qty
+                        'stockQty': productDetails.Qty,
+                        'stare':0
                     }
                     cartList.splice(index, 1, newCartList);
                 }
@@ -55,7 +56,8 @@ function saveToCart(productID) {
                     'name': productDetails.Name,
                     'price': productDetails.Price,
                     'qty': selectedQty,
-                    'stockQty': productDetails.Qty
+                    'stockQty': productDetails.Qty,
+                    'stare':0
                 });
             }
 

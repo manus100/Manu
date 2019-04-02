@@ -4,6 +4,7 @@
 html, body{
     margin:0;
     padding:0;
+    
 }
 
 #website{
@@ -11,7 +12,7 @@ html, body{
     margin: 0 auto;
     background-color:#e4fde4;
     border: 1px dotted #8bc34a;
-    font-family: MyriadPro-Regular, Arial, Helvetica, sans-serif;
+    font-family: "MyriadPro-Light", Arial, Helvetica, 'sans-serif';
 }
 
 #header{
@@ -22,13 +23,20 @@ html, body{
    
 }
 
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color:#e4fde4;
+    z-index: 1
+  }
+
 .headerElements.title{
     font-family: 'MyriadPro-Light';
     font-size: 40px;
     font-weight: bold;
     font-style: italic;
     margin: auto;
-    color:green;
     text-shadow: 0 0 1px #91c445;
     flex:3;
     min-width: 260px;
@@ -71,8 +79,6 @@ a:visited {
 #adminBtn{
    border:1px solid lightgray;
    background-color: white;
-   border-radius: 10px;
-   font-size:16px;
    overflow: hidden;
 }
 
@@ -337,8 +343,8 @@ img {vertical-align: middle;}
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     font-size: 30px;
-    position:fixed;
-    max-width: 1255px; 
+    position: fixed;
+    max-width: 1255px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -461,6 +467,13 @@ width:130px;
     margin:30px 20px 50px 30px;
 }
 
+@media only screen and (max-width: 400px) {
+    #adminContent { margin:30px 10px 50px 10px;}
+    .cartField{font-size: 15px;}
+    .cartTitle{margin:30px 10px;}
+    .headerElements.title{font-size: 30px;}
+  }
+
 #adminTable{
     border-collapse: collapse;
     width:95%;
@@ -497,10 +510,20 @@ width:130px;
     text-align: left;
     margin-left: 30px;
 }
+
 .inputs {
     width: 85%;
     margin-left: 10px;
     float: left;     
+}
+
+@media only screen and (max-width: 1000px) {
+    .labels {
+        margin-left: 5px; 
+    }
+    .inputs {
+        margin-left: 5px;    
+    }
 }
 
 .minwid{

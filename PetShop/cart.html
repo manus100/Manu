@@ -14,7 +14,7 @@
 
 <body onload="getCartNbOfItems(''); getCartList();">
     <div id="website">
-        <div id="header">
+        <div id="header" class="sticky">
             <div class='headerElements'><img src="img\whiteCat.jpg" alt="Cat image" id="imgHeader"></div>
             <div class='headerElements title'><a href="index.html">PetShop Online</a></div>
             <div class='headerElements right'>
@@ -33,8 +33,10 @@
 
 
         <div id="main">
-            <div class='pageTitle cartTitle'>Cos cumparaturi</div>
-            <div id="userMessage" class='pageTitle userMessage' style="display: none;">Comanda a fost plasata!</div>
+           
+            <div id="userMessage" class='pageTitle userMessage' style="display: none;">Comanda a fost plasata!</div> 
+
+            <div class='pageTitle cartTitle' style='position:relative; '>Cos cumparaturi</div>
             <div id="cartContent">
                 <div id="cartLeft">
                     <table id="cartTable">

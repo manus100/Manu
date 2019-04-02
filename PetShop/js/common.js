@@ -117,7 +117,7 @@ function getDetails(productID, refreshPage) {
 async function showDetails(detailsPromise) {
 
     startSpinner();
-    var details = await detailsPromise;
+    var details =  await detailsPromise;
 
 
     document.querySelector("#detailsProductImg").src = details.Image;

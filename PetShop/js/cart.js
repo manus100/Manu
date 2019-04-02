@@ -27,6 +27,7 @@ function getCartList() {
 
 function showCartList(lista) {
     str = "";
+    var cartUpdated=0;
 
     for (var i in lista) {
         if (!lista.hasOwnProperty(i)) {
@@ -36,8 +37,10 @@ function showCartList(lista) {
             continue;
         }
 
+
+        //daca admin-ul a modificat un produs, colorez inregistrarea cu rosu si afisez un mesaj utilizatorului (un title)
         str += `
-        <tr>
+        <tr ${((lista[i].stare==1)? "style='background-color:#fb9070;' title='Produs modificat de administratorul site-ului, va rugam verificati detaliile!'":'' )}>
             <td >
                 <a href="details.html?productID=${lista[i].id}" class="linkProductName">
                     ${lista[i].name}
@@ -72,7 +75,7 @@ function calculateSubtotal(qty, price) {
 function showTotal(lista) {
     calculateTotal(lista);
     str = `
-        <p>Produse: ${lista.length}</p>
+        <p>Nr. produse: ${lista.length}</p>
         <p>TVA: ${arr[0]} RON</p>
         <p>Transport: ${transport} RON</p>
         <h3>Total: ${arr[1]} RON</h3>
@@ -150,10 +153,10 @@ function refreshPage(lista) {
     showTotal(lista)
 }
 
-/**Functie care salveaza continutul localStorage in tabeka cos
- * sterg intai inregistrarile din cos(daca exista)
+/**Functie care salveaza continutul localStorage in tabela cos
+ * sterg intai inregistrarile din tabela cos(daca exista)
  * pentru fiecare produs din cos verific intai ca nu s-a schimbat cantitatea din stoc sau pretul
- * daca au intervenit modificari atentionez utilizatorul
+ * daca au intervenit modificari atentionez utilizatorul (inrosesc produsele modificate de admin)
  * daca nu au intervenit modificari salvez continutul localStorage in cos
  * actualizez stocul produselor comandate in tabela produse
  * sterg localStorage
@@ -170,7 +173,8 @@ async function buyProducts() {
     }
 
     listaCos = JSON.parse(localStorage.getItem('cart'));
-    for (var i = 0; i < listaCos.length; i++) {
+    //am renuntat la verificare, cd modifica admin-ul se actualizeaza automat si cosul
+/*    for (var i = 0; i < listaCos.length; i++) {
         produs = await ajax("GET", `${url}/produse/${listaCos[i].id}.json`);
         if (listaCos[i].qty > produs.Qty || listaCos[i].price !== produs.Price) {
             //s-a modificat cantitatea sau pretul produsului, dau mesaj utilizatorului
@@ -183,12 +187,13 @@ async function buyProducts() {
             break;
         }
     }
-
+*/
     //pot sa salvez in baza de date; folosesc PUT ca sa imi salveze cu id-ul din produs
-    if (comandaOk) {
+//    if (comandaOk) {
         for (var i = 0; i < listaCos.length; i++) {
             //salvez in tabela cos
-            await ajax("PUT", `${url}cos/${listaCos[i].id}.json`, JSON.stringify(listaCos[i]))
+            await ajax("PUT", `${url}cos/${listaCos[i].id}.json`, JSON.stringify(listaCos[i]));
+            produs = await ajax("GET", `${url}/produse/${listaCos[i].id}.json`);
             //actualizez stocul
             el.Details = produs.Details;
             el.Image = produs.Image;
@@ -215,5 +220,5 @@ async function buyProducts() {
         //actualizez interfata
         getCartList();
         getCartNbOfItems('');
-    }
+//    }
 }
