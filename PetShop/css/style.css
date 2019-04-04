@@ -212,7 +212,6 @@ a:visited {
     .chartBtn{
         width: 120px;
     }
-
   }
 
 /* Medium screens */
@@ -286,6 +285,7 @@ a:visited {
     text-align: center;
     font-weight: bold;
     width:100%;
+    margin-top: 10px;
 }
 
 img {vertical-align: middle;}
@@ -358,15 +358,21 @@ img {vertical-align: middle;}
 .userMessage{
     background-color:#fbe1a5;
     text-align: center;
+    z-index: 1;
 }
 
+@media only screen and (min-width: 600px) {
+    #btnAdd:after{
+        content: ' produs';
+    }
+}
 
 /*--------------------------------------------------------------  Cart page ------------------------------------------------------*/
 
 .cartTitle{
     text-align: left;
     font-style: italic;
-    margin: 30px;
+    margin: 45px 30px;
 }
 
 #cartContent{
@@ -474,13 +480,19 @@ width:130px;
 @media only screen and (max-width: 400px) {
     #adminContent { margin:30px 10px 50px 10px;}
     .cartField{font-size: 15px;}
-    .cartTitle{margin:30px 10px;}
+    .cartTitle{margin:35px 10px;}
     .headerElements.title{
         font-size: 30px;
         flex:2;
         min-width: 180px;
     }
-  }
+    .btnCancel{
+        margin-left: 5px;
+    }
+    #adminPageBtns{
+        margin:30px 0px;
+    }
+}
 
 #adminTable{
     border-collapse: collapse;
@@ -527,10 +539,13 @@ width:130px;
 
 @media only screen and (max-width: 1000px) {
     .labels {
-        margin-left: 5px; 
+        width:20%;
+        margin-left: 2px; 
+        font-size: 14px;
     }
     .inputs {
-        margin-left: 5px;    
+        width: 78%;
+        margin-left: 2px;    
     }
 }
 
@@ -557,6 +572,10 @@ textarea{
     font-size: 13px;
 }
 
+#adminPageBtns{
+    text-align:center;
+    margin:30px 15px;
+}
 .btnCancel {
     display: inline-block;
     height: 30px;
@@ -573,37 +592,7 @@ textarea{
     margin-left: 10px;
 }
 
-/*adminTable thead>tr>th:first-child{
-   text-align: left;
-}
 
-#adminTable tbody>tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#adminTable tbody tr td>a{
-    color: #7d09ed;
-    text-decoration: none;
-}
-
-.cartFieldQty{
-    text-align: center;
-}
-
-.cartBtns {
-    background-color: transparent;
-    border: none;
-    cursor:pointer;
-    color: #7d09ed;
-    font-size:20px;
-}
-
-.cartField{
-    font-size: 17px;
-    text-align: right;
-}
-
-*/
 
 
 #footer{

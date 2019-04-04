@@ -3,7 +3,7 @@ var slideIndex = 0;
 
 /**
  * Functie care salveaza produsele in cosul de cumparaturi 
- * @param {*} productID 
+ * @param {productID}  
  * verificare cantitate introdusa sa fie mai mica decat cea din stoc
  * verifica cantitate introdusa + cea din cos (daca exista) sa nu depaseasca stocul
  * salvare detalii produs in localStorage
@@ -31,9 +31,9 @@ function saveToCart(productID) {
             index = cartList.findIndex((obj => obj.id == productID));
 
             if (index >= 0) {
-                if (productDetails.Qty < selectedQty + + parseInt(cartList[index].qty)) {
+                if (productDetails.Qty < selectedQty +  parseInt(cartList[index].qty)) {
                     //stocul mai mic decat cantitatea introdusa + cantitatea existenta deja in cos
-                    alert('Cantitatea din cos plus cea introdusa depaseste stocul produsului! \n\n  Va rugam sa introduceti o cantitate mai mica!')
+                    alert('Cantitatea din cos si cea selectata depaseste stocul produsului! \n\n  Va rugam sa introduceti o cantitate mai mica!')
                     return;
                 } else {
                     //salvez si un camp stare care imi va spune daca inregistrarea a fost modificata de admin

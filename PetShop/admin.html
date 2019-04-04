@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css\style.css" />
     <script type="text/javascript" src="js\common.js"></script>
     <script type="text/javascript" src="js\admin.js"></script>
-
+    <link rel="icon" href="img\favicon.ico" type="image/x-icon">
 </head>
 
 <body onload="getProductsList(); getCartNbOfItems('');">
@@ -35,7 +35,7 @@
         <div id="main">
             <div class='pageTitle cartTitle'  style='position: relative;'>
                 <div id='pageTitle' style='float:left;'>Gestionare produse</div>
-                <button id='btnAdd' class='chartBtn' onclick="showAddForm();">+ Adauga produs</button>
+                <button id='btnAdd' class='chartBtn' onclick="showAddForm();">+ Adauga</button>
             </div>
            
             <div id="userMessage" class='pageTitle userMessage' style="clear:both; display: none;">Mesaj</div>
@@ -83,8 +83,8 @@
                             oninput="setCustomValidity('');"></textarea>
                         <!--data-value-missing="Introduceti descrierea produsului!"><br /><br />-->
                         <br /><br />
-                        <div style='text-align:center;margin:30px;'>
-                            <input type="submit" value="Salveaza" id='btnSave' class='chartBtn' tabindex="7" />
+                        <div id='adminPageBtns'>
+                            <input type="submit" value="Salveaza" id='btnSave' class='chartBtn' style='width:150px;' tabindex="7" />
                             <input type="button" id='btnCancel' value="Renunta" class='btnCancel' tabindex="8"
                                 onclick="showTable();" />
                         </div>

@@ -116,27 +116,42 @@ function getDetails(productID, refreshPage) {
 
 async function showDetails(detailsPromise) {
 
-    startSpinner();
-    var details =  await detailsPromise;
+    if (detailsPromise!=null){
+        startSpinner();
+        var details =  await detailsPromise;
 
 
-    document.querySelector("#detailsProductImg").src = details.Image;
-    document.querySelector("#nameBrand").innerHTML = details.Name;
-    document.querySelector("#detailsProductDetail").innerHTML = details.Details;
-    document.querySelector("#detailsProductPrice").innerHTML = details.Price + ' RON';
-    if (details.Qty > 0) {
-        document.querySelector("#disponibil").innerHTML = 'In stoc';
-        document.querySelector("#disponibil").style.color = 'green';
-        document.querySelector("#disponibil").style.fontWeight = 'bold'
-    } else {
-        document.querySelector("#disponibil").innerHTML = 'Indisponibil';
-        document.querySelector("#disponibil").style.color = 'red';
-    }
-    document.querySelector("#disponibil").style.fontWeight = 'bold';
+        document.querySelector("#detailsProductImg").src = details.Image;
+        document.querySelector("#nameBrand").innerHTML = details.Name;
+        document.querySelector("#detailsProductDetail").innerHTML = details.Details;
+        document.querySelector("#detailsProductPrice").innerHTML = details.Price + ' RON';
+        if (details.Qty > 0) {
+            document.querySelector("#disponibil").innerHTML = 'In stoc';
+            document.querySelector("#disponibil").style.color = 'green';
+            document.querySelector("#disponibil").style.fontWeight = 'bold'
+        } else {
+            document.querySelector("#disponibil").innerHTML = 'Indisponibil';
+            document.querySelector("#disponibil").style.color = 'red';
+            document.querySelector("#addToCart").disabled=true;
+        }
+        document.querySelector("#disponibil").style.fontWeight = 'bold';
 
-    tipMancare = details.Tip
+        tipMancare = details.Tip
 
-    stopSpinner();
+        stopSpinner();
+    } else{
+        //daca e null inseamna ca vine din pagina de cos, a dar click pe un produs pe care l-a sters admin-ul
+        document.getElementById('productDetails').style.display = "none";
+        document.getElementById('detailsProductShop').style.display = "none";
+
+        document.getElementById('userMessage').innerHTML = 'Produsul nu mai face parte din oferta noastra!'
+        document.getElementById('userMessage').style.display = "block";
+ 
+
+}
+
+
+
     getSlides(); 
     
 }
@@ -171,11 +186,18 @@ async function showDetails(detailsPromise) {
        }
    */
 function getCartNbOfItems() {
+    var nbOfItems=0;
     var cartList = JSON.parse(localStorage.getItem('cart'));
     if (cartList == null) {
         document.getElementById('cartItems').innerHTML = ' (0)';
     } else {
-        document.getElementById('cartItems').innerHTML = ` (${cartList.length})`;
+            for (var i in cartList){
+                nbOfItems+=cartList[i].qty;
+            }
+
+        //document.getElementById('cartItems').innerHTML = ` (${cartList.length})`;
+        document.getElementById('cartItems').innerHTML = `(${nbOfItems})`;
+        return nbOfItems;
     }
 
 }
