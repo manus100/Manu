@@ -4,7 +4,7 @@ var slideIndex = 0;
 /**
  * Functie care salveaza produsele in cosul de cumparaturi 
  * @param {productID}  
- * verificare cantitate introdusa sa fie mai mica decat cea din stoc
+ * verifica daca cantitatea introdusa este mai mica decat cea din stoc
  * verifica cantitate introdusa + cea din cos (daca exista) sa nu depaseasca stocul
  * salvare detalii produs in localStorage
  */

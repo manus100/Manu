@@ -43,7 +43,7 @@ function showCartList(lista) {
         }
         //daca admin-ul a modificat un produs, colorez inregistrarea cu rosu si afisez un mesaj utilizatorului (un title)
         str += `
-        <tr ${((lista[i].stare == 1) ? "style='background-color:#fb9070;' title='Produs modificat de administratorul site-ului, va rugam verificati detaliile!'" : '')}>
+        <tr ${((lista[i].stare == 1) ? "style='background-color:#FE7478;' title='Produs modificat de administratorul site-ului, va rugam verificati detaliile!'" : '')}>
             <td >
                 <a href="details.html?productID=${lista[i].id}" class="linkProductName">
                     ${lista[i].name}
